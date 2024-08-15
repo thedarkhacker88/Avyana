@@ -86,6 +86,191 @@
 
   <main id="main">
 
+	  <!-- #independence wishes -->
+  <div>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #e0e0e0;
+            text-align: center;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        .wishes-container {
+            background: linear-gradient(135deg, #FF9933, #FFFFFF, #138808);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+            max-width: 700px;
+            margin: 50px auto;
+            position: relative;
+            overflow: hidden;
+            animation: slideIn 1s ease-out;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(100px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .flag-banner {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .flag {
+            width: 70px;
+            height: 50px;
+            margin: 0 10px;
+            border-radius: 5px;
+            animation: flagWave 3s ease-in-out infinite;
+        }
+
+        .flag:nth-child(1) { background-color: #FF9933; }
+        .flag:nth-child(2) { background-color: #FFFFFF; }
+        .flag:nth-child(3) { background-color: #138808; }
+
+        @keyframes flagWave {
+            0%, 100% { transform: rotate(0); }
+            50% { transform: rotate(10deg); }
+        }
+
+        h1 {
+            color: black;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            font-size: 2.5em;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); }
+            to { text-shadow: 0 0 20px rgba(255, 255, 255, 0.9); }
+        }
+
+        p {
+            color: black;
+            font-size: 1.2em;
+            margin: 20px 0;
+            line-height: 1.5em;
+        }
+
+        button {
+            background-color: #138808;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        button:hover {
+            background-color: #0b6b06;
+        }
+
+        .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 25px;
+            border-radius: 15px;
+            max-width: 400px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            display: none;
+        }
+
+        .popup h2 {
+            color: #ff9933;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+
+        .popup p {
+            color: #138808;
+            font-size: 1.1em;
+            margin-bottom: 15px;
+        }
+
+        .popup .close {
+            font-size: 18px;
+            color: #000;
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .popup .close:hover {
+            color: #ff9933;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="wishes-container">
+        <div class="flag-banner">
+            <div class="flag"></div>
+            <div class="flag"></div>
+            <div class="flag"></div>
+        </div>
+        <h1>Happy Independence Day!</h1>
+        <p>Wishing you all a very Happy Independence Day from <strong>Avyana Software Solutions</strong>. Let's celebrate the spirit of freedom and unity.</p>
+        <button id="moreInfoBtn">Learn More</button>
+    </div>
+
+    <div class="overlay"></div>
+    <div id="popup" class="popup">
+        <span class="close">&times;</span>
+        <h2>Independence Day - August 15th</h2>
+        <p>On this day, we commemorate the sacrifices of our freedom fighters and celebrate the nation's independence. Let's continue to work together for a prosperous future.</p>
+        <p>Best Wishes,<br>Avyana Software Solutions</p>
+    </div>
+
+    <script>
+        const moreInfoBtn = document.getElementById('moreInfoBtn');
+        const popup = document.getElementById('popup');
+        const overlay = document.querySelector('.overlay');
+        const closeBtn = document.querySelector('.close');
+
+        moreInfoBtn.addEventListener('click', function() {
+            popup.style.display = 'block';
+            overlay.style.display = 'block';
+        });
+
+        closeBtn.addEventListener('click', function() {
+            popup.style.display = 'none';
+            overlay.style.display = 'none';
+        });
+
+        overlay.addEventListener('click', function() {
+            popup.style.display = 'none';
+            overlay.style.display = 'none';
+        });
+    </script>
+    
+  </div>
+
     <!--==========================
       About Us Section
     ============================-->
