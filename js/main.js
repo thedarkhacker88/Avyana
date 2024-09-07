@@ -72,7 +72,18 @@
       }
     }
   });
+// JavaScript to Add Fade-in Effect
+document.addEventListener("DOMContentLoaded", function () {
+  const wishesSection = document.getElementById("vinayakaChavithiWishes");
+  wishesSection.style.opacity = 0;
+  wishesSection.style.transition = "opacity 2s ease-in";
 
+  // Function to Fade-in the section
+  setTimeout(() => {
+    wishesSection.style.opacity = 1;
+  }, 500); // Adjust timing as needed
+});
+  
   // Navigation active state on scroll
   var nav_sections = $('section');
   var main_nav = $('.main-nav, .mobile-nav');
