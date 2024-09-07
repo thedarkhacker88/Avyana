@@ -86,9 +86,142 @@
 
   <main id="main">
 
-	  <!-- #independence wishes -->
+	  <!-- #festiwal wishes -->
   <div>
-    
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(45deg, #ff6347, #ffd700, #00bfff, #adff2f);
+            background-size: 400% 400%;
+            animation: gradientBackground 15s ease infinite; /* Multi-color animated background */
+        }
+
+        .wish-container {
+            text-align: center;
+            color: #fff;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            position: relative;
+            animation: fadeIn 3s ease-out;
+        }
+
+        .ganesha-img {
+            width: 250px;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin: 10px 0;
+            color: #ffeb3b; /* Yellow text color */
+            animation: pulse 2s infinite;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin: 10px 0;
+            color: #fff;
+        }
+
+        .floating-flowers {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #ff6347; /* Flower color */
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(255, 99, 71, 0.8);
+            animation: floatFlower 10s linear infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        @keyframes floatFlower {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        @keyframes gradientBackground {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wish-container">
+        <div class="wish-content">
+            <img src="ganesh.jpg" alt="Vinayaka Chavithi" class="ganesha-img">
+            <h1>Happy Vinayaka Chavithi</h1>
+            <p>May Lord Ganesha bless you with happiness, success, and prosperity!</p>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript to create animated floating elements (flowers)
+        function createFloatingFlowers() {
+            for (let i = 0; i < 20; i++) { // Adjust the number of flowers
+                let flower = document.createElement('div');
+                flower.className = 'floating-flowers';
+                flower.style.left = Math.random() * window.innerWidth + 'px';
+                flower.style.animationDuration = (10 + Math.random() * 5) + 's'; // Random duration for variety
+                document.body.appendChild(flower);
+            }
+        }
+
+        window.onload = createFloatingFlowers;
+    </script>
     
   </div>
 
